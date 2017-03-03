@@ -15,3 +15,8 @@ Route::get('/' , [
     'uses'   => 'FrontEndController@index',
     'as'     =>  'index'
 ]);
+
+Route::get('/product/{id}', [
+    'uses' => 'FrontEndController@singleProduct',
+    'as'   => 'product.single'
+]);
