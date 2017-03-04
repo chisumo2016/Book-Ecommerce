@@ -30,7 +30,7 @@
                             {{ csrf_field() }}
 
                                 <div class="quantity">
-                                    <a href="#" class="quantity-minus">-</a>
+                                    <a href="#" class="quantity-minus quantity-minus-d">-</a>
                                     <input title="Qty" class="email input-text qty text" type="text" value="2" name="qty">
                                     <a href="#" class="quantity-plus">+</a>
                                 </div>
