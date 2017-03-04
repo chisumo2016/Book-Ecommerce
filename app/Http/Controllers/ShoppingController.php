@@ -13,25 +13,35 @@ class ShoppingController extends Controller
 
     public  function  add_to_cart()
     {
-//        dd(request()->all());
 
+       // Add Item to the Cart
         $pdt = Product::find(request()->pdt_id);
 
-       $cart =  Cart::add([
+       $cartItem =  Cart::add([
             'id'    => $pdt->id,
             'name'  => $pdt->name,
             'qty'   =>request()->qty,
             'price' =>$pdt->price
         ]);
 
-       return redirect()->route('cart');
+       Cart::associate($cartItem->rowId, 'App\Product');  // Display an image to cart Page
 
-       // dd($cart);  dd(Cart::content());
+       return redirect()->route('cart');
 
     }
 
     public function cart()
     {
+
+
         return view('cart');
     }
+
+    public  function  cart_delete($id)
+    {
+        Cart::remove($id);
+        return redirect()->back();
+    }
 }
+
+// dd($cart);  dd(Cart::content());  //        dd(request()->all());  Cart::destroy();
