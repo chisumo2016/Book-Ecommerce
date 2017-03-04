@@ -24,7 +24,14 @@ class ShoppingController extends Controller
             'price' =>$pdt->price
         ]);
 
-       // dd($cart);
-        dd(Cart::content());
+       return redirect()->route('cart');
+
+       // dd($cart);  dd(Cart::content());
+
+    }
+
+    public function cart()
+    {
+        return view('cart');
     }
 }
