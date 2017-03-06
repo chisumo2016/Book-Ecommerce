@@ -48,3 +48,9 @@ Route::get('/cart/decr/{id}/{qty}', [
     'uses' => 'ShoppingController@decr',
     'as'   => 'cart.decr'
 ]);
+
+Route::get('/cart/rapid/add/{id}', [
+
+    'uses' => 'ShoppingController@rapid_add',
+    'as'   => 'cart.rapid.add'
+]);
