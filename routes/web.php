@@ -54,3 +54,8 @@ Route::get('/cart/rapid/add/{id}', [
     'uses' => 'ShoppingController@rapid_add',
     'as'   => 'cart.rapid.add'
 ]);
+
+Route::get('/cart/checkout',[
+    'uses' => 'CheckoutController@index',
+    'as'  =>'cart.checkout'
+]);
