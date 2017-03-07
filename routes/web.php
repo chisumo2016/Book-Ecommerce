@@ -59,3 +59,8 @@ Route::get('/cart/checkout',[
     'uses' => 'CheckoutController@index',
     'as'  =>'cart.checkout'
 ]);
+
+Route::post('/cart/checkout', [
+    'uses' => 'CheckoutController@pay',
+    'as'   => 'cart.checkout'
+]);
